@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Option Buttons</title>
+</head>
+<body>
+
+<p>Choose an option:</p>
+
+<form>
+  <input type="radio" id="option1" name="options" value="Option 1">
+  <label for="option1">Friends Now?</label><br><br>
+
+  <input type="radio" id="option2" name="options" value="Option 2">
+  <label for="option2">Nope, I have already left</label><br><br>
+
+  <button type="button" onclick="getSelectedOption()">Enter</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+function getSelectedOption() {
+  let radios = document.getElementsByName('options');
+  let selectedValue = null;
+
+  for (let i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      selectedValue = radios[i].value;
+      break;
+    }
+  }
+
+  if (selectedValue) {
+    document.getElementById('result').innerHTML = "Thanks for the answer..."
+  } else {
+    document.getElementById('result').innerHTML = "................";
+  }
+}
+</script>
+
+</body>
+</html>
